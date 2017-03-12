@@ -9,13 +9,15 @@ import { ChatThreadsComponent } from './chat-threads/chat-threads.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 
 import { servicesInjectables } from './_services/services';
+import { ChatThreadComponent } from './chat-thread/chat-thread.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ChatThreadsComponent,
-    ChatWindowComponent
+    ChatWindowComponent,
+    ChatThreadComponent
   ],
   imports: [
     BrowserModule,
