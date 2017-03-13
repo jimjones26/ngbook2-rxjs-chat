@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { ThreadsService } from '../_services/threads.service';
 
 @Component({
   selector: 'app-chat-threads',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './chat-threads.component.html',
   styleUrls: ['./chat-threads.component.css']
 })
-export class ChatThreadsComponent implements OnInit {
+export class ChatThreadsComponent {
 
-  constructor() { }
+  threads: Observable<any>;
 
-  ngOnInit() {
+  constructor(threadsService: ThreadsService) {
+    this.threads = threadsService.orderedThreads;
   }
 
 }
